@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="./wc-design.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+        <script src="./wc-design.js"></script>
+        <title>Static Template</title>
+    </head>
+    <body>
+        <button type="button" data-wc-toggle="modal" data-wc-target="#meuModal" class="wc-btn wc-btn-dark">Abrir Modal</button>
+        <div id="meuModal" class="wc-modal wc-shadow-lg">
+            <div class="wc-modal-dialog">
+                <div class="wc-modal-content">
+                    <div class="wc-modal-header">
+                        <span class="wc-modal-title">Atualizar produto</span>
+                        <button type="button" class="wc-close-button"><span>&times;</span></button>
+                    </div>
+                    <div class="wc-modal-body">
+                        <form action="" class="wc-form">
+                            <div class="wc-row">
+                                <div class="wc-form-group wc-col-12">
+                                    <label for="nameProduct">Nome do produto:</label>
+                                    <input type="text" class="wc-form-control" id="nameProduct">
+                                    <small class="wc-form-text wc-text-muted">Insira o nome do produtp</small>
+                                </div>
+                                <div class="wc-form-group wc-col-6">
+                                    <label for="productPrice">Valor do produto:</label>
+                                    <div class="wc-input-group">
+                                        <div class="wc-input-group-prepend"><i class="fas fa-dollar-sign"></i></div>
+                                        <div class="wc-input-group-field"><input type="number" class="wc-form-control" id="productPrice"></div>
+                                    </div>
+                                    <small class="wc-form-text wc-text-muted">Informe o valor do produto.</small>
+                                </div>
+                                <div class="wc-form-group wc-col-6">
+                                    <label for="productStok">Estoque:</label>
+                                    <input type="number" class="wc-form-control" id="productStok">
+                                    <small class="wc-form-text wc-text-muted">Insira a quantidade de estoque.</small>
+                                </div>
+                                <div class="wc-form-group wc-col-6">
+                                    <label for="exampleFormControlTextarea1">Markup:</label>
+                                    <input type="number" class="wc-form-control" name="markup" id="productMarkup">
+                                    <small class="wc-form-text wc-text-muted">Defina o valor de markup, este campo deve ser numerico.</small>
+                                </div>
+                                <div class="wc-form-group wc-col-6">
+                                    <label for="exampleFormControlTextarea1">Garantia:</label>
+                                    <input type="number" class="wc-form-control" name="markup" id="productMarkup">
+                                    <small class="wc-form-text wc-text-muted">Defina a quantidade de meses de garantia.</small>
+                                </div>
+                                <div class="wc-form-group wc-col-12">
+                                    <label for="exampleFormControlTextarea1">Descrição da garantia:</label>
+                                    <textarea class="wc-form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
+                                    <small class="wc-form-text wc-text-muted">Escreva uma descrição para a garantia.</small>
+                                </div>
+                                <div class="wc-form-group wc-col-12">
+                                    <label for="exampleFormControlTextarea1">Catgegoria:</label>
+                                    <div class="wc-select-group">
+                                        <!-- <div class="wc-select-group-prepend"><i class="fas fa-dollar-sign"></i></div> -->
+                                        <div class="wc-select-group-field">
+                                            <select class="wc-custom-select">
+                                                <option value="0">Batata Frita</option>
+                                                <option value="1">Batata Cozida</option>
+                                                <option value="2">Batata</option>
+                                                <option value="3">Batata em pote</option>
+                                                <option value="4">Batata em pote com catupiri</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <small class="wc-form-text wc-text-muted">Selecione uma categoria.</small>
+                                </div>
+                                <div class="wc-form-group wc-col-12">
+                                    <label for="exampleFormControlTextarea1">Catgegoria:</label>
+                                    <div class="wc-select-group">
+                                        <!-- <div class="wc-select-group-prepend"><i class="fas fa-dollar-sign"></i></div> -->
+                                        <div class="wc-select-group-field">
+                                            <select class="wc-custom-select">
+                                                <option value="0">Batata Frita</option>
+                                                <option value="1">Batata Cozida</option>
+                                                <option value="2">Batata</option>
+                                                <option value="3">Batata em pote</option>
+                                                <option value="4">Batata em pote com catupiri</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <small class="wc-form-text wc-text-muted">Selecione uma categoria.</small>
+                                </div>
+                                <div class="wc-form-group wc-col-6">
+                                    <label for="exampleFormControlTextarea1">Marca:</label>
+                                    <input type="number" class="wc-form-control" name="markup" id="productMarkup">
+                                    <small class="wc-form-text wc-text-muted">Insira o nome da marca do produto.</small>
+                                </div>
+                                <div class="wc-form-group wc-col-6">
+                                    <label for="exampleFormControlTextarea1">Modelo:</label>
+                                    <input type="number" class="wc-form-control" name="markup" id="productMarkup">
+                                    <small class="wc-form-text wc-text-muted">Insira o modelo do produto.</small>
+                                </div>
+                                <div class="wc-form-group wc-col-6">
+                                    <label for="exampleFormControlTextarea1">Origem:</label>
+                                    <input type="number" class="wc-form-control" name="markup" id="productMarkup">
+                                    <small class="wc-form-text wc-text-muted">Defina a origem do produto.</small>
+                                </div>
+                                <div class="wc-form-group wc-col-6">
+                                    <label for="exampleFormControlTextarea1">SKU Interno:</label>
+                                    <input type="number" class="wc-form-control" name="markup" id="productMarkup">
+                                    <small class="wc-form-text wc-text-muted">Insira o SKU do produto.</small>
+                                </div>
+                                <div class="wc-form-group wc-col-6">
+                                    <label for="exampleFormControlTextarea1">Codigo de barras:</label>
+                                    <input type="number" class="wc-form-control" name="markup" id="productMarkup">
+                                    <small class="wc-form-text wc-text-muted">Insira o codigo de barras do produtos.</small>
+                                </div>
+                                <div class="wc-form-group wc-col-6">
+                                    <label for="exampleFormControlTextarea1">Preço base:</label>
+                                    <div class="wc-input-group">
+                                        <div class="wc-input-group-prepend"><i class="fas fa-dollar-sign"></i></div>
+                                        <div class="wc-input-group-field"><input type="number" class="wc-form-control" name="markup" id="productMarkup"></div>
+                                    </div>
+                                    <small class="wc-form-text wc-text-muted">Insira o preço base.</small>
+                                </div>
+                                <div class="wc-form-group wc-col-12">
+                                    <label for="exampleFormControlTextarea1">Descrição do produto:</label>
+                                    <textarea class="wc-form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                    <small class="wc-form-text wc-text-muted">Escreva uma descrição para o produto.</small>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="wc-modal-footer">
+                        <button type="button" class="wc-btn wc-btn-danger wc-btn-primary wc-close-modal">Cacelar</button>
+                        <button type="button" class="wc-btn wc-btn-dark wc-btn-primary">Atualizar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="wc-modal-background-fixed"></div>
+        </div>
+    </body>
+</html>
