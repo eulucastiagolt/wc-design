@@ -61,20 +61,25 @@ window.addEventListener("DOMContentLoaded", () => {
         });
     });
     document.addEventListener("click", function(elem){
-        // console.log(elem.target);
-        // console.log(document.querySelector(".wc-custom-select-options.open"));
-        if(document.querySelector(".wc-custom-select-options.open")){
-            console.log("Aberto");
-            // document.querySelectorAll(".wc-select-action").forEach(e => {
-            //     if(elem.target !== e){
-            //         document.querySelector(".wc-select-options-content.show").classList.remove("show");
-            //         document.querySelector(".wc-custom-select-options.open").classList.remove("open");
-            //     }else{
-            //         console.log("AAAAA")
-            //     }
-            // });
+        if(!elem.target.classList.contains("wc-select-action")){
+            if(document.querySelector(".wc-custom-select-options.open")){
+                if(elem.target !== document.querySelector(".wc-custom-select-options.open")){
+                    document.querySelector(".wc-select-options-content.show").classList.remove("show");
+                    document.querySelector(".wc-custom-select-options.open").classList.remove("open");
+                }
+            }
         }else{
-            console.log("Fechado")
+            if(document.querySelectorAll(".wc-custom-select-options.open").length > 1){
+                document.querySelectorAll(".wc-custom-select-options.open").forEach(e => {
+                    if(e === elem.target.parentElement){
+                        e.querySelector(".wc-select-options-content").classList.add("show");
+                        e.classList.add("open");
+                    }else{
+                        e.querySelector(".wc-select-options-content").classList.remove("show");
+                        e.classList.remove("open");
+                    }
+                });
+            }
         }
     });
 });
