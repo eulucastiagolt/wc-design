@@ -93,4 +93,12 @@ window.addEventListener("DOMContentLoaded", () => {
             }
         }
     });
+
+    document.querySelectorAll("[data-wc-input='autocomplete']").forEach(element => {
+        element.addEventListener("input", function(){
+            const input = this;
+            const target = this.dataset.target;
+
+        });
+    });
 });
