@@ -75,6 +75,11 @@ textarea
     resize: vertical;
 }
 
+// WC-TEXT-UPPERCASE
+.wc-text-uppercase{
+    text-transform: uppercase !important;
+}
+
 /* Close Button */
 
 .wc-close-button
@@ -120,10 +125,6 @@ textarea
     background: rgba(0,0,0,0.5);
     backdrop-filter: blur(5px);
     -web-kit-backdrop-filter: blur(5px);
-}
-
-.wc-show-modal-background{
-    display:block;
 }
 
 .wc-modal-dialog{
@@ -235,7 +236,7 @@ textarea
     padding: .40rem 1rem;
     font-size: 1rem;
     line-height: 1.5;
-    border-radius: .30rem;
+    border-radius: 2rem;
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
     margin: 0 .25rem;
 }
@@ -500,16 +501,16 @@ textarea
 {
     display: block;
     width: 100%;
-    height: calc(1.5em + .75rem + 2px);
+    height: calc(1.5em + .75rem + 2px) !important;
     padding: .375rem .75rem;
     font-size: 1rem;
     font-weight: 400;
-    line-height: 1.5;
-    color: #495057;
-    background-color: #fff;
+    line-height: 1.5 !important;
+    color: #495057 !important;
+    background-color: #fff !important;
     background-clip: padding-box;
-    border: 1px solid #ced4da;
-    border-radius: .25rem;
+    border: 1px solid #ced4da !important;
+    border-radius: 2rem !important;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
@@ -578,7 +579,8 @@ textarea
 
 textarea.wc-form-control
 {
-    height: auto;
+    border-radius: 1rem !important;
+    height: auto !important;
 }
 
 /* input group */
@@ -591,10 +593,12 @@ textarea.wc-form-control
 }
 
 .wc-input-group > .wc-input-group-prepend + .wc-input-group-field input,
+.wc-input-group > .wc-input-group-prepend + input,
 .wc-select-group > .wc-select-group-prepend + .wc-select-group-field select
 {
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+    border-left: 0px solid transparent !important;
 }
 
 /* input group prepend */
@@ -602,14 +606,14 @@ textarea.wc-form-control
 .wc-input-group-prepend,
 .wc-select-group-prepend
 {
-    height: calc(1.5em + .75rem + 2px);
-    padding: .375rem .75rem;
+    height: calc(1.5em + .75rem + 2px) !important;
+    padding: .375rem .75rem !important;
+    padding-left: 1rem !important;
     font-size: 1rem;
-    line-height: 1.5;
-    border: 1px solid #ced4da;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    border-right: 0px solid;
+    line-height: 1.5 !important;
+    border: 1px solid #ced4da !important;
+    border-top-left-radius: 2rem !important;
+    border-bottom-left-radius: 2rem !important;
     color: #495057;
     background: #e6e6e6;
 }
@@ -729,21 +733,23 @@ textarea.wc-form-control
 
 .wc-custom-select {
   display: inline-block;
-  width: 100%;
-  height: calc(1.5em + .75rem + 2px);
-  padding: .375rem 1.75rem .375rem .75rem;
-  font-size: 1rem;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: calc(1.5em + .75rem + 2px) !important;
+  padding: .375rem 1.75rem .375rem .75rem !important;
+  font-size: 1rem !important;
   font-weight: 400;
-  line-height: 1.5;
-  color: #495057;
+  line-height: 1.5 !important;
+  color: #495057 !important;
   vertical-align: middle;
   background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no-repeat right .75rem center/8px 10px;
-  background-color: #fff;
-  border: 1px solid #ced4da;
-  border-radius: .25rem;
+  background-color: #fff !important;
+  border: 1px solid #ced4da !important;
+  border-radius: 2rem !important;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  transition: background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
 .wc-custom-select:focus {
@@ -759,10 +765,6 @@ textarea.wc-form-control
 
 .wc-custom-select::-ms-expand {
   display: none;
-}
-
-.wc-custom-select {
-  transition: background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
 @media (prefers-reduced-motion:reduce) {
@@ -808,57 +810,44 @@ textarea.wc-form-control
     left: 0;
     top: 100%;
     background: #fff;
-    box-shadow: 0 8px 10px 0px rgba(0,0,0,0.3);
-    border-radius: 6px;
+    box-shadow: 0 4px 15px 0px rgba(0,0,0,0.3);
+    border-radius: 2rem;
     padding: 10px;
+    margin-bottom: 20px;
     z-index: 1997;
+
+    &.show{
+        display: block;
+        z-index: 2020;
+    }
+
+    .wc-list-select-options-items{
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+
+        .wc-list-select-option-item{
+            padding:0px;
+            margin: 0;
+
+            .wc-option-item-link{
+                color: #343a40;
+                text-decoration: none;
+                padding: 10px 15px;
+                border-radius: 2rem;
+                display: block;
+
+                &:hover{
+                    color: var(--text-secondary);
+                    background: var(--background-secondary-hover);
+                }
+            }
+        }
+    }
+
 }
 
 .wc-select-group-prepend + .wc-select-group-field .wc-select-options-content{
     left: -30px;
     width: calc(100% + 30px);
-}
-
-.wc-select-options-content.show{
-    display: block;
-    z-index: 2020;
-}
-
-.wc-select-options-content
-.wc-list-select-options-items{
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-.wc-select-options-content
-.wc-list-select-options-items
-.wc-list-select-option-item{
-    padding:0px;
-    margin: 0;
-}
-
-.wc-select-options-content
-.wc-list-select-options-items
-.wc-list-select-option-item:hover{
-    
-}
-
-.wc-select-options-content
-.wc-list-select-options-items
-.wc-list-select-option-item
-.wc-option-item-link{
-    color: #343a40;
-    text-decoration: none;
-    padding: 10px 15px;
-    border-radius: 3px;
-    display: block;
-}
-
-.wc-select-options-content
-.wc-list-select-options-items
-.wc-list-select-option-item
-.wc-option-item-link:hover{
-    color: var(--text-secondary);
-    background: var(--background-secondary-hover);
 }

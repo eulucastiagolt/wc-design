@@ -1,4 +1,10 @@
 window.addEventListener("DOMContentLoaded", () => {
+
+    const $allModalAddBackground = document.querySelectorAll(".wc-modal");
+    $allModalAddBackground.forEach(e => {
+        e.innerHTML += `<div class="wc-modal-background-fixed"></div>`;
+    });
+
     const $allBtnModal = document.querySelectorAll("[data-wc-toggle='modal']");
     $allBtnModal.forEach(e => {
         const $modal = document.querySelector(e.dataset.wcTarget);
@@ -6,14 +12,19 @@ window.addEventListener("DOMContentLoaded", () => {
             $modal.classList.add("wc-show-modal");
             document.querySelector("body").style.overflow = "hidden";
         });
-        $modal.querySelector(".wc-close-button").addEventListener("click", () => {
-            $modal.classList.remove("wc-show-modal");
-            document.querySelector("body").style.overflow = "auto";
-        });
-        $modal.querySelector(".wc-close-modal").addEventListener("click", () => {
-            $modal.classList.remove("wc-show-modal");
-            document.querySelector("body").style.overflow = "auto";
-        });
+        if($modal.querySelector(".wc-close-button")){
+            $modal.querySelector(".wc-close-button").addEventListener("click", () => {
+                $modal.classList.remove("wc-show-modal");
+                document.querySelector("body").style.overflow = "auto";
+            });
+        }
+        
+        if($modal.querySelector(".wc-close-modal")){
+            $modal.querySelector(".wc-close-modal").addEventListener("click", () => {
+                $modal.classList.remove("wc-show-modal");
+                document.querySelector("body").style.overflow = "auto";
+            });
+        }
         if ($modal.querySelector(".wc-modal-background-fixed")){
             $modal.querySelector(".wc-modal-background-fixed").addEventListener("click", () => {
                 $modal.classList.remove("wc-show-modal");
