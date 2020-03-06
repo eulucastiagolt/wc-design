@@ -7,10 +7,36 @@
         <link rel="stylesheet" href="./wc-design.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
         <script src="./wc-design.js"></script>
+        <script src="./functions_teste.js"></script>
         <title>Static Template</title>
     </head>
     <body>
         <button type="button" data-wc-toggle="modal" data-wc-target="#meuModal" class="wc-btn wc-btn-dark">Abrir Modal</button>
+        <button type="button" data-wc-toggle="notify" id="myNotify" class="wc-btn wc-btn-success">Abrir notify</button>
+
+        <!-- <div class="wc-notify">
+            <div class="wc-notify-icon wc-notify-icon-danger">
+                <div class="wc-notify-icon-item">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+            </div>
+            <div class="wc-notify-constent">
+                <div class="wc-notify-header">
+                    <div class="wc-notify-title">Notify title</div>
+                    <button type="button" class="wc-close-button wc-notify-colse"><span>&times;</span></button>
+                </div>
+                <div class="wc-notify-body">
+                    <div class="wc-notify-message">Notify message</div>
+                </div>
+                <div class="wc-notify-footer">
+                    <div class="wc-notify-actions">
+                        <button type="button" class="wc-btn wc-btn-danger">Cancel button</button>
+                        <button type="button" class="wc-btn wc-btn-primary">OK button</button>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
         <div id="meuModal" class="wc-modal wc-shadow-lg">
             <div class="wc-modal-dialog">
                 <div class="wc-modal-content">
@@ -23,7 +49,9 @@
                             <div class="wc-row">
                                 <div class="wc-form-group wc-col-12">
                                     <label for="productWoocommerce">Produto Woocommerce</label>
-                                    <input type="text" name="productWoocommerce" class="wc-form-control" id="productWoocommerce" data-wc-input="autocomplete" data-wc-target="prodwoo">
+                                    <div class="wc-input-group">
+                                        <input type="text" name="productWoocommerce" class="wc-form-control" id="productWoocommerce">
+                                    </div>
                                     <small class="wc-form-text wc-text-muted">Selecione uma categoria para vinculação</small>
                                 </div>
                                 <div class="wc-form-group wc-col-12">
