@@ -457,6 +457,7 @@ textarea {
 /* Form */
 /* Form Group */
 .wc-form-group {
+  position: relative;
   margin-bottom: 1rem;
 }
 
@@ -541,6 +542,7 @@ textarea.wc-form-control {
 .wc-select-group {
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 .wc-input-group > .wc-input-group-prepend + .wc-input-group-field input,
@@ -766,6 +768,9 @@ textarea.wc-form-control {
   list-style-type: none;
   padding: 0;
   margin: 0;
+  max-height: calc(44px * 5);
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 .wc-select-options-content .wc-list-select-options-items .wc-list-select-option-item {
   padding: 0px;
@@ -786,6 +791,112 @@ textarea.wc-form-control {
 .wc-select-group-prepend + .wc-select-group-field .wc-select-options-content {
   left: -30px;
   width: calc(100% + 30px);
+}
+
+.wc-autocomplete-content {
+  min-width: 150px;
+  width: 100%;
+  min-height: 59px;
+  position: absolute;
+  display: none;
+  left: 0;
+  top: 100%;
+  background: #fff;
+  box-shadow: 0 4px 15px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 2rem;
+  padding: 10px;
+  margin-bottom: 20px;
+  z-index: 1997;
+}
+.wc-autocomplete-content.show {
+  display: block;
+}
+.wc-autocomplete-content ul.wc-autocomplete-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  max-height: 200px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.wc-autocomplete-content ul.wc-autocomplete-list li {
+  margin: 0;
+}
+.wc-autocomplete-content ul.wc-autocomplete-list li a {
+  color: #343a40;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 2rem;
+  display: block;
+}
+.wc-autocomplete-content ul.wc-autocomplete-list li a:hover {
+  color: var(--text-secondary);
+  background: var(--background-secondary-hover);
+}
+
+.wc-notify {
+  transition: right 1s;
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  min-height: 100px;
+  min-width: 400px;
+  padding: 20px;
+  box-shadow: 0 0 1rem 0px rgba(0, 0, 0, 0.1), 0 0.5rem 1rem 0px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-between;
+  border-radius: 2rem;
+  font-family: "Roboto", sans-serif;
+}
+.wc-notify.wc-notify-show {
+  right: 20px;
+  transition: right 0.5s;
+}
+.wc-notify .wc-notify-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 20px;
+}
+.wc-notify .wc-notify-icon-danger {
+  color: #dc3545;
+}
+.wc-notify .wc-notify-icon .wc-notify-icon-item {
+  width: 80px;
+  height: 80px;
+  font-size: 2rem;
+  box-shadow: 0 -0.1rem 0.1rem 0px rgba(0, 0, 0, 0.1), 0 0.2rem 0.2rem 0px rgba(0, 0, 0, 0.2);
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wc-notify .wc-notify-constent {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+.wc-notify .wc-notify-constent .wc-notify-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  margin-bottom: 10px;
+}
+.wc-notify .wc-notify-constent .wc-notify-header .wc-notify-title {
+  text-transform: uppercase;
+}
+.wc-notify .wc-notify-constent .wc-notify-header .wc-notify-colse {
+  font-size: 1.4rem;
+  padding: 0;
+}
+.wc-notify .wc-notify-constent .wc-notify-body {
+  margin: 10px 0;
+}
+.wc-notify .wc-notify-constent .wc-notify-footer {
+  margin: 0;
+  margin-top: 10px;
 }
 
 /*# sourceMappingURL=wc-design.css.map */
