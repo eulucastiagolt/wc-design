@@ -219,6 +219,9 @@ const wc = function(element) {
         },
 
         notify: function(options = null){
+            if(!options.eventType){
+                options.eventType = "snapshot";
+            }
             const locallAllNotify = document.createElement("div");
             locallAllNotify.classList.add("wc-all-notify");
             const notifyElement = document.createElement("div");
@@ -273,9 +276,13 @@ const wc = function(element) {
                 document.querySelector("body").insertAdjacentElement("beforeend", locallAllNotify);
             }
 
-            document.querySelector(element).addEventListener("click", function(){
+            if(options.eventType != "snapshot"){
+                document.querySelector(element).addEventListener("click", function(){
+                    document.querySelector(".wc-all-notify").appendChild(notifyElement);
+                });
+            }else{
                 document.querySelector(".wc-all-notify").appendChild(notifyElement);
-            });
+            }
         }
     }
 }

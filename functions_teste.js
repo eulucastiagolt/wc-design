@@ -45,7 +45,8 @@ window.addEventListener("DOMContentLoaded", function(){
         cancelText: "Cancelar",
         cancelAction: function(){
             console.log("Você apertou em Cancelar");
-        }
+        },
+        eventType: "click"
     }
 
     const notifyOptions2 = {
@@ -59,10 +60,11 @@ window.addEventListener("DOMContentLoaded", function(){
         cancelText: "Cancelar",
         cancelAction: function(){
             console.log("Você apertou em Cancelar na notificação 2");
-        }
+        },
+        eventType: "snapshot"
     }
 
 
     wc("#myNotify").notify(notifyOptions);
-    wc("#myNotify").notify(notifyOptions2);
+    wc().notify(notifyOptions2);
 });
