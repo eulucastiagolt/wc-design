@@ -1,0 +1,63 @@
+h1, h2, h3, h4, h5, h6, .wc-h1, .wc-h2, .wc-h3, .wc-h4, .wc-h5, .wc-h6 {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+h1, .wc-h1 {
+  font-size: 2.5rem;
+}
+
+h2, .wc-h2 {
+  font-size: 2rem;
+}
+
+h3, .wc-h3 {
+  font-size: 1.75rem;
+}
+
+h4, .wc-h4 {
+  font-size: 1.5rem;
+}
+
+h5, .wc-h5 {
+  font-size: 1.25rem;
+}
+
+h6, .wc-h6 {
+  font-size: 1rem;
+}
+
+.wc-lead {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+.wc-display-1 {
+  font-size: 6rem;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.wc-display-2 {
+  font-size: 5.5rem;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.wc-display-3 {
+  font-size: 4.5rem;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.wc-display-4 {
+  font-size: 3.5rem;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+small, .small {
+  font-size: 80%;
+  font-weight: 400;
+}

@@ -1,0 +1,46 @@
+.wc-autocomplete-content{
+    min-width: 150px;
+    width: 100%;
+    min-height: 59px;
+    position: absolute;
+    display: none;
+    left: 0;
+    top: 100%;
+    background: #fff;
+    box-shadow: 0 4px 15px 0px rgba(0,0,0,0.3);
+    border-radius: 2rem;
+    padding: 10px;
+    margin-bottom: 20px;
+    z-index: 1997;
+
+    &.show{
+        display: block;
+    }
+
+    ul.wc-autocomplete-list{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        max-height: 200px;
+        // margin-right: 15px;
+        overflow-x: hidden;
+        overflow-y: auto;
+
+        li{
+            margin: 0;
+
+            a{
+                color: #343a40;
+                text-decoration: none;
+                padding: 10px 15px;
+                border-radius: 2rem;
+                display: block;
+            
+                &:hover{
+                    color: var(--text-secondary);
+                    background: var(--background-secondary-hover);
+                }
+            }
+        }
+    }
+}

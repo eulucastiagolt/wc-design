@@ -45,9 +45,26 @@ window.addEventListener("DOMContentLoaded", function(){
         cancelText: "Cancelar",
         cancelAction: function(){
             console.log("Você apertou em Cancelar");
-        }
+        },
+        eventType: "click"
+    }
+
+    const notifyOptions2 = {
+        title: "Notify teste 2",
+        message: "Mensage teste",
+        icon: `<i class="fas fa-exclamation-triangle"></i>`,
+        okText: "Ok",
+        okAction: function(){
+            console.log("Você apertou no OK");
+        },
+        cancelText: "Cancelar",
+        cancelAction: function(){
+            console.log("Você apertou em Cancelar na notificação 2");
+        },
+        eventType: "snapshot"
     }
 
 
     wc("#myNotify").notify(notifyOptions);
+    wc().notify(notifyOptions2);
 });

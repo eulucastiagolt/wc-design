@@ -1,8 +1,8 @@
 {
   "name": "wc-design",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "description": "Framework Css",
-  "main": "server.js",
+  "main": "server-tow.js",
   "dependencies": {
     "connect": "^3.7.0",
     "express": "^4.17.1",
@@ -19,7 +19,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server-tow.js",
-    "sass": "npm install -g sass && sass --watch wc-design.scss:wc-design.css"
+    "sass" : "sass --watch wc-design.scss:wc-design.css",
+    "sass_install": "npm install -g sass && sass --watch wc-design.scss:wc-design.css"
   },
   "repository": {
     "type": "git",

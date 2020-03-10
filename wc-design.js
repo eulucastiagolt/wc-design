@@ -219,6 +219,11 @@ const wc = function(element) {
         },
 
         notify: function(options = null){
+            if(!options.eventType){
+                options.eventType = "snapshot";
+            }
+            const locallAllNotify = document.createElement("div");
+            locallAllNotify.classList.add("wc-all-notify");
             const notifyElement = document.createElement("div");
             notifyElement.classList.add("wc-notify");
             notifyElement.innerHTML = `
@@ -244,27 +249,40 @@ const wc = function(element) {
                 </div>
             `;
 
-            const allNotifyCancelBtn = notifyElement.querySelectorAll(".wc-notify-cancel-btn");
+            const allNotifyCancelBtn = notifyElement.querySelector(".wc-notify-cancel-btn");
 
-            allNotifyCancelBtn.forEach(elementBtn => {
-                const btn = elementBtn;
-                btn.addEventListener("click", function() {
-                    options.cancelAction();
+            allNotifyCancelBtn.addEventListener("click", function() {
+                const notify = this.parentElement.parentElement.parentElement.parentElement;
+                notify.parentElement.removeChild(notify);
+                options.cancelAction();
+            });
+
+            const allNotifyOkBtn = notifyElement.querySelector(".wc-notify-ok-btn");
+
+            allNotifyOkBtn.addEventListener("click", function() {
+                const notify = this.parentElement.parentElement.parentElement.parentElement;
+                notify.parentElement.removeChild(notify);
+                options.okAction();
+            });
+
+            const btnCloseNotify = notifyElement.querySelector(".wc-notify-colse");
+
+            btnCloseNotify.addEventListener("click", function() {
+                const notify = this.parentElement.parentElement.parentElement;
+                notify.parentElement.removeChild(notify);
+            });
+
+            if(!document.querySelector(".wc-all-notify")){
+                document.querySelector("body").insertAdjacentElement("beforeend", locallAllNotify);
+            }
+
+            if(options.eventType != "snapshot"){
+                document.querySelector(element).addEventListener("click", function(){
+                    document.querySelector(".wc-all-notify").appendChild(notifyElement);
                 });
-            });
-
-            const allNotifyOkBtn = notifyElement.querySelectorAll(".wc-notify-ok-btn");
-
-            allNotifyOkBtn.forEach(elementBtn => {
-                const btn = elementBtn;
-                btn.addEventListener("click", function() {
-                    options.okAction();
-                });
-            });
-
-            document.querySelector(element).addEventListener("click", function(){
-                document.querySelector("body").appendChild(notifyElement);
-            });
+            }else{
+                document.querySelector(".wc-all-notify").appendChild(notifyElement);
+            }
         }
     }
 }
