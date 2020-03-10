@@ -292,9 +292,11 @@ const wc = function(element) {
             if(options.eventType != "snapshot"){
                 document.querySelector(element).addEventListener(options.eventType, function(){
                     document.querySelector(".wc-all-notify").appendChild(notifyElement);
+                    notifyElement.classList.add("wc-notify-show");
                 });
             }else{
                 document.querySelector(".wc-all-notify").appendChild(notifyElement);
+                notifyElement.classList.add("wc-notify-show");
             }
         }
     }

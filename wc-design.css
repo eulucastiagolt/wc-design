@@ -4933,22 +4933,24 @@ textarea.wc-form-control {
   position: fixed;
   right: 20px;
   top: 20px;
+  z-index: 999999991997;
 }
 .wc-all-notify .wc-notify {
-  transition: right 1s;
+  background: #fff;
+  position: relative;
   min-height: 100px;
   min-width: 400px;
   padding: 20px;
   box-shadow: 0 0 0.5rem 0px rgba(0, 0, 0, 0.1), 0 0.5rem 0.5rem 0px rgba(0, 0, 0, 0.2);
-  display: flex;
+  display: none;
   justify-content: space-between;
   border-radius: 2rem;
   font-family: "Roboto", sans-serif;
   margin-bottom: 15px;
+  transition: right 1s;
 }
 .wc-all-notify .wc-notify.wc-notify-show {
-  right: 20px;
-  transition: right 0.5s;
+  display: flex;
 }
 .wc-all-notify .wc-notify .wc-notify-icon {
   display: flex;
