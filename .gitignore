@@ -1,6 +1,11 @@
 /node_modules/*
-wc-design.css.map
 server.js
+server-tow.js
 package-lock.json
 gulpfile.js
 yarn.lock
+.gitpod.yml
+.gitpod.Dockerfile
+botstrap-original-file.css
+/.theia/*
+gulpfile.js
