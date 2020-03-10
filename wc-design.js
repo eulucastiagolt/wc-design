@@ -263,18 +263,21 @@ const wc = function(element) {
                 allNotifyCancelBtn.addEventListener("click", function() {
                     const notify = this.parentElement.parentElement.parentElement.parentElement;
                     notify.parentElement.removeChild(notify);
-                    options.cancelAction();
+                    if(typeof options.cancelAction == "function"){
+                        options.cancelAction();
+                    }
                 });
             }
 
             if(notifyElement.querySelector(".wc-notify-ok-btn")){
-            
                 const allNotifyOkBtn = notifyElement.querySelector(".wc-notify-ok-btn");
 
                 allNotifyOkBtn.addEventListener("click", function() {
                     const notify = this.parentElement.parentElement.parentElement.parentElement;
                     notify.parentElement.removeChild(notify);
-                    options.okAction();
+                    if(typeof options.okAction == "function"){
+                        options.okAction();
+                    }
                 });
             }
 
