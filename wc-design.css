@@ -4956,6 +4956,24 @@ textarea.wc-form-control {
   align-items: center;
   padding-right: 20px;
 }
+.wc-all-notify .wc-notify .wc-notify-icon-primary {
+  color: #007bff;
+}
+.wc-all-notify .wc-notify .wc-notify-icon-secondary {
+  color: #6c757d;
+}
+.wc-all-notify .wc-notify .wc-notify-icon-success {
+  color: #28a745;
+}
+.wc-all-notify .wc-notify .wc-notify-icon-warning {
+  color: #ffc107;
+}
+.wc-all-notify .wc-notify .wc-notify-icon-info {
+  color: #17a2b8;
+}
+.wc-all-notify .wc-notify .wc-notify-icon-dark {
+  color: #212529;
+}
 .wc-all-notify .wc-notify .wc-notify-icon-danger {
   color: #dc3545;
 }

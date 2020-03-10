@@ -35,6 +35,7 @@ window.addEventListener("DOMContentLoaded", function(){
     wc_autocomplete($settings, $args);
 
     const notifyOptions = {
+        notifyType: "warning",
         title: "Notify teste",
         message: "Mensage teste",
         icon: `<i class="fas fa-exclamation-triangle"></i>`,
@@ -52,15 +53,7 @@ window.addEventListener("DOMContentLoaded", function(){
     const notifyOptions2 = {
         title: "Notify teste 2",
         message: "Mensage teste",
-        icon: `<i class="fas fa-exclamation-triangle"></i>`,
-        okText: "Ok",
-        okAction: function(){
-            console.log("Você apertou no OK");
-        },
-        cancelText: "Cancelar",
-        cancelAction: function(){
-            console.log("Você apertou em Cancelar na notificação 2");
-        },
+        icon: `<i class="fas fa-check"></i>`,
         eventType: "snapshot"
     }
 

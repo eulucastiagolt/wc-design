@@ -28,8 +28,32 @@
             align-items: center;
             padding-right: 20px;
 
+            &-primary{
+                color: $color-primary;
+            }
+
+            &-secondary{
+                color: $color-secondary;
+            }
+
+            &-success{
+                color: $color-success;
+            }
+
+            &-warning{
+                color: $color-warning;
+            }
+
+            &-info{
+                color: $color-info;
+            }
+
+            &-dark{
+                color: $color-dark;
+            }
+
             &-danger{
-                color: #dc3545;
+                color: $color-danger;
             }
 
             .wc-notify-icon-item{

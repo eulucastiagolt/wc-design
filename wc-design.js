@@ -222,16 +222,24 @@ const wc = function(element) {
             if(!options.eventType){
                 options.eventType = "snapshot";
             }
+            if(!options.okText){
+                options.okText = "OK";
+            }
+
             const locallAllNotify = document.createElement("div");
             locallAllNotify.classList.add("wc-all-notify");
             const notifyElement = document.createElement("div");
             notifyElement.classList.add("wc-notify");
-            notifyElement.innerHTML = `
-                <div class="wc-notify-icon wc-notify-icon-danger">
-                    <div class="wc-notify-icon-item">
-                        ${options.icon}
+            if(options.icon){
+                notifyElement.innerHTML += `
+                    <div class="wc-notify-icon wc-notify-icon-${options.notifyType ? options.notifyType : "info"}">
+                        <div class="wc-notify-icon-item">
+                            ${options.icon}
+                        </div>
                     </div>
-                </div>
+                `;
+            }
+            notifyElement.innerHTML += `
                 <div class="wc-notify-constent">
                     <div class="wc-notify-header">
                         <div class="wc-notify-title">${options.title}</div>
@@ -242,28 +250,33 @@ const wc = function(element) {
                     </div>
                     <div class="wc-notify-footer">
                         <div class="wc-notify-actions">
-                            <button type="button" class="wc-btn wc-btn-danger wc-notify-cancel-btn">${options.cancelText}</button>
+                            ${options.cancelText ? `<button type="button" class="wc-btn wc-btn-danger wc-notify-cancel-btn">${options.cancelText}</button>` : ""}
                             <button type="button" class="wc-btn wc-btn-primary wc-notify-ok-btn">${options.okText}</button>
                         </div>
                     </div>
                 </div>
             `;
 
-            const allNotifyCancelBtn = notifyElement.querySelector(".wc-notify-cancel-btn");
+            if(notifyElement.querySelector(".wc-notify-cancel-btn")){
+                const allNotifyCancelBtn = notifyElement.querySelector(".wc-notify-cancel-btn");
 
-            allNotifyCancelBtn.addEventListener("click", function() {
-                const notify = this.parentElement.parentElement.parentElement.parentElement;
-                notify.parentElement.removeChild(notify);
-                options.cancelAction();
-            });
+                allNotifyCancelBtn.addEventListener("click", function() {
+                    const notify = this.parentElement.parentElement.parentElement.parentElement;
+                    notify.parentElement.removeChild(notify);
+                    options.cancelAction();
+                });
+            }
 
-            const allNotifyOkBtn = notifyElement.querySelector(".wc-notify-ok-btn");
+            if(notifyElement.querySelector(".wc-notify-ok-btn")){
+            
+                const allNotifyOkBtn = notifyElement.querySelector(".wc-notify-ok-btn");
 
-            allNotifyOkBtn.addEventListener("click", function() {
-                const notify = this.parentElement.parentElement.parentElement.parentElement;
-                notify.parentElement.removeChild(notify);
-                options.okAction();
-            });
+                allNotifyOkBtn.addEventListener("click", function() {
+                    const notify = this.parentElement.parentElement.parentElement.parentElement;
+                    notify.parentElement.removeChild(notify);
+                    options.okAction();
+                });
+            }
 
             const btnCloseNotify = notifyElement.querySelector(".wc-notify-colse");
 
