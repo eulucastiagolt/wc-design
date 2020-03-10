@@ -277,7 +277,7 @@ const wc = function(element) {
             }
 
             if(options.eventType != "snapshot"){
-                document.querySelector(element).addEventListener("click", function(){
+                document.querySelector(element).addEventListener(options.eventType, function(){
                     document.querySelector(".wc-all-notify").appendChild(notifyElement);
                 });
             }else{
