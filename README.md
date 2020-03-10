@@ -1,3 +1,3 @@
 # wc-design
 
-## WC
+## WC Dev
