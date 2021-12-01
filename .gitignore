@@ -1,4 +1,4 @@
-/node_modules/*
+node_modules/
 server.js
 server-tow.js
 package-lock.json
@@ -7,8 +7,7 @@ yarn.lock
 .gitpod.yml
 .gitpod.Dockerfile
 botstrap-original-file.css
-/.theia/*
+.theia/*
 gulpfile.js
 cache/
-node_modules
 .parcel-cahce/
