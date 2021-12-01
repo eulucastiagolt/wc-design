@@ -9,3 +9,6 @@ yarn.lock
 botstrap-original-file.css
 /.theia/*
 gulpfile.js
+cache/
+node_modules
+.parcel-cahce/
